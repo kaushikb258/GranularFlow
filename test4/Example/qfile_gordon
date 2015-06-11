@@ -1,0 +1,10 @@
+#!/bin/bash
+#PBS -N test4
+#PBS -q normal
+#PBS -l nodes=32:ppn=16:native
+#PBS -l walltime=16:00:00
+#PBS -A ddp188 
+
+cd /oasis/scratch/balakris/temp_project/test4/Example
+
+mpirun_rsh -hostfile $PBS_NODEFILE -np 512 ./Executable/jet_pfe21_3d_Parallel >& jet_out
